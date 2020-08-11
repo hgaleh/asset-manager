@@ -7,6 +7,14 @@ import { AddressComponent } from './address/address.component';
 import { ReviewComponent } from './review/review.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ComboBoxModule } from '@progress/kendo-angular-dropdowns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { NumericTextBoxModule } from '@progress/kendo-angular-inputs';
+ import { TextBoxModule } from '@progress/kendo-angular-inputs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
+import { ButtonModule } from '@progress/kendo-angular-buttons';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +26,14 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ComboBoxModule,
+    NumericTextBoxModule,
+    TextBoxModule,
+    DateInputsModule,
+    DatePickerModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

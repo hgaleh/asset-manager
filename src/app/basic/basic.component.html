@@ -1,1 +1,10 @@
-<p>basic works!</p>
+<kendo-combobox [data]="listItems" textField="title" valueField="id">
+</kendo-combobox>
+
+<kendo-numerictextbox
+            [value]="numberbox" [min]="0" [max]="100" [autoCorrect]="true">
+</kendo-numerictextbox>
+
+<kendo-datepicker [(value)]="date" (valueChange)="dataChange($event)"></kendo-datepicker>
+
+<button kendoButton (click)="onButtonClick()">Browse</button>
