@@ -1189,6 +1189,14 @@
   dependencies:
     tslib "^1.9.0"
 
+"@progress/kendo-angular-layout@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-angular-layout/-/kendo-angular-layout-5.0.3.tgz#7ca9d9707bc59c12866d44199e541b74faf41548"
+  integrity sha512-AcaiceSvg4YodyTZhHvi/5xpH9XKTNfUYqWbAA8TPDBruKu2NruwZirdH34BuBWMwwbZfp+XLhc171u5CxaRNA==
+  dependencies:
+    "@progress/kendo-schematics" "^1.0.0"
+    tslib "^1.9.0"
+
 "@progress/kendo-angular-notification@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@progress/kendo-angular-notification/-/kendo-angular-notification-2.1.1.tgz#217e74d9ff9a4a938ae88c484f320bb329ca4fa3"
@@ -1203,6 +1211,14 @@
   integrity sha512-lRxMzGxRz8IOYpQ33CuS31VbI3uDfSEBXjCYNQUAq5sUsOFB/Qq2l5iMCcLFfqwlG8Yf/MKTRoCXc0eAGOofzA==
   dependencies:
     "@progress/kendo-popup-common" "^1.7.0"
+    "@progress/kendo-schematics" "^1.0.0"
+    tslib "^1.9.0"
+
+"@progress/kendo-angular-progressbar@^0.2.3":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-angular-progressbar/-/kendo-angular-progressbar-0.2.4.tgz#003f7c81928285015dc827afdd6fdec75e771856"
+  integrity sha512-GN74p8f65fn5KoMU69oRA4rQdOIskMadtjtFq/WsenNrbXs6dO5REdC3EYGXOwB6toAWuikNliVsFGznvEQeqA==
+  dependencies:
     "@progress/kendo-schematics" "^1.0.0"
     tslib "^1.9.0"
 

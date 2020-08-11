@@ -15,6 +15,8 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { NotificationModule } from '@progress/kendo-angular-notification';
+import { DrawerModule } from '@progress/kendo-angular-layout';
+
 
 
 
@@ -37,6 +39,7 @@ import { NotificationModule } from '@progress/kendo-angular-notification';
     DatePickerModule,
     ButtonModule,
     NotificationModule,
+    DrawerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
