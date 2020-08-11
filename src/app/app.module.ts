@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
+import { NotificationModule } from '@progress/kendo-angular-notification';
+
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { ButtonModule } from '@progress/kendo-angular-buttons';
     DateInputsModule,
     DatePickerModule,
     ButtonModule,
+    NotificationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
