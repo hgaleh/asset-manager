@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<!-- The sidebar -->
+<div class="sidebar">
+  <a class="active" routerLink="/basic" routerLinkActive="active">Basic</a>
+  <a routerLink="/address" routerLinkActive="active">Address</a>
+  <a routerLink="/review" routerLinkActive="active">Review</a>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
