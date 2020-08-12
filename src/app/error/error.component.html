@@ -1,0 +1,23 @@
+<span  class="error text-xs" *ngIf="this.control.invalid && (this.control.dirty || this.control.touched)">
+    <div *ngIf="control.errors.required">
+        Required.
+    </div>
+    <div *ngIf="control.errors.maxlength">
+        Too long.
+    </div>
+    <div *ngIf="control.errors.minlength">
+        Very short.
+    </div>
+    <div *ngIf="control.errors.min">
+        Very low.
+    </div>
+    <div *ngIf="control.errors.max">
+        Very high.
+    </div>
+    <div *ngIf="control.errors.historyDate">
+        Date should be from past.
+    </div>
+    <div *ngIf="control.errors.letter">
+        Only English characters.
+    </div>
+</span>

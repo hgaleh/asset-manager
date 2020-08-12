@@ -16,8 +16,8 @@ import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { NotificationModule } from '@progress/kendo-angular-notification';
 import { DrawerModule } from '@progress/kendo-angular-layout';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -26,11 +26,13 @@ import { DrawerModule } from '@progress/kendo-angular-layout';
     BasicComponent,
     AddressComponent,
     ReviewComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ComboBoxModule,
     NumericTextBoxModule,

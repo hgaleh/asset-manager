@@ -3,6 +3,7 @@ import { BasicModel } from '../model/basic.model';
 import { AddressModel } from '../model/address.model';
 import { ComboModel } from '../model/combo.model';
 import { ReviewModel } from '../model/review.model';
+import { BasicComponent } from '../basic/basic.component';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,16 @@ export class UserService {
     this.basic = model;
   }
 
+  getBasic(): BasicModel {
+    return this.basic || new BasicModel();
+  }
+
   saveAddress(model: AddressModel): void {
     this.address = model;
+  }
+
+  getAddress(): AddressModel {
+    return this.address || new AddressModel();
   }
 
   getReview(): ReviewModel {

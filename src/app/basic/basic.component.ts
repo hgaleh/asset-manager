@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ComboModel } from '../model/combo.model';
 import { UserService } from '../service/user.service';
 import { NotificationService } from '@progress/kendo-angular-notification';
+import { FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { historyDateValidator } from '../validator/history-date.validator';
+import { letterValidator } from '../validator/letter.validator';
 
 @Component({
   selector: 'app-basic',
@@ -9,32 +14,55 @@ import { NotificationService } from '@progress/kendo-angular-notification';
   styleUrls: ['./basic.component.css']
 })
 export class BasicComponent implements OnInit {
-  listItems: Array<ComboModel>;
-  date: string;
-  numberbox: number;
+  sexList: Array<ComboModel>;
+  initList: Array<ComboModel>;
+  nationalityList: Array<ComboModel>;
+  model = new FormGroup({});
   constructor(
     private service: UserService,
-    private notificationService: NotificationService
-  ) {}
+    private notificationService: NotificationService,
+    private router: Router,
+    private fb: FormBuilder,
+  ) {  
+    this.model = this.fb.group({
+      sex: ['', Validators.required],
+      initials: [''],
+      firstName: ['', [Validators.required, letterValidator()]],
+      lastName: ['', [Validators.required, letterValidator()]],
+      dateOfBirth: ['', [Validators.required, historyDateValidator(new Date())]],
+      nationality: ['', Validators.required],
+      socialSecurityNumber: ['', [Validators.required, Validators.max(9999999999), Validators.min(999)]]
+    });
+    this.model.patchValue(this.service.getBasic());
+  }
   
   ngOnInit(): void {
-    this.listItems = this.service.getSex();
-    this.numberbox = 100;
+    this.sexList = this.service.getSex();
+    this.initList = this.service.getInitials();
+    this.nationalityList = this.service.getCountries();
   }
 
-  dataChange(e) {
-    debugger;
-  }
-
-  onButtonClick() {
+  onSubmit() {
+    this.service.saveBasic(this.model.value);
     this.notificationService.show(
       {
-        content: 'Success notification',
+        content: 'Saved!',
         hideAfter: 600,
         position: { horizontal: 'center', vertical: 'top' },
         animation: { type: 'fade', duration: 400 },
         type: { style: 'success', icon: true }
       }
     );
+    this.router.navigate(['./address']);
   }
+
+  private control(name: string) { return this.model.get(name)}
+
+  get sex() { return this.control('sex')}
+  get initials() { return this.control('initials')}
+  get firstName() { return this.control('firstName')}
+  get lastName() { return this.control('lastName')}
+  get dateOfBirth() { return this.control('dateOfBirth')}
+  get nationality() { return this.control('nationality')}
+  get socialSecurityNumber() { return this.control('socialSecurityNumber')}
 }

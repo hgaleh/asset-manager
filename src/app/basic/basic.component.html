@@ -1,10 +1,45 @@
-<kendo-combobox [data]="listItems" textField="title" valueField="id">
-</kendo-combobox>
-
-<kendo-numerictextbox
-            [value]="numberbox" [min]="0" [max]="100" [autoCorrect]="true">
-</kendo-numerictextbox>
-
-<kendo-datepicker [(value)]="date" (valueChange)="dataChange($event)"></kendo-datepicker>
-
-<button kendoButton (click)="onButtonClick()">Browse</button>
+<form [formGroup]="model" (ngSubmit)="onSubmit()">
+    <div class="flex mb-3 mt-3">
+        <div class="w-1/2 mx-auto text-3xl">
+            Basic Details
+        </div>
+    </div>
+    <div class="flex mb-3">
+        <kendo-combobox placeholder="Sex" id="sex" formControlName="sex" [valuePrimitive]="true" class="w-1/2 mx-auto"
+        [data]="sexList" textField="title" valueField="id"></kendo-combobox>
+        <app-error [control]="sex" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-combobox placeholder="Initials" [data]="initList" [valuePrimitive]="true" class="w-1/2 mx-auto"
+        formControlName="initials" textField="title" valueField="id"></kendo-combobox>
+        <app-error [control]="initials" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="First Name" formControlName="firstName" class="w-1/2 mx-auto" />
+        <app-error [control]="firstName" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="Last Name" formControlName="lastName" class="w-1/2 mx-auto"/>
+        <app-error [control]="lastName" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-datepicker formControlName="dateOfBirth" placeholder="Date Of Birth" class="w-1/2 mx-auto"></kendo-datepicker>
+        <app-error [control]="dateOfBirth" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-combobox placeholder="Nationality" [maxlength]="10" [minlength]="10" [data]="nationalityList" class="w-1/2 mx-auto"
+        [valuePrimitive]="true" formControlName="nationality" textField="title" valueField="id"></kendo-combobox>
+        <app-error [control]="nationality" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-numerictextbox placeholder="Social Security Number" class="w-1/2 mx-auto"
+        formControlName="socialSecurityNumber"> </kendo-numerictextbox>
+        <app-error [control]="socialSecurityNumber" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <div class="mx-auto">
+            <button kendoButton (click)="$event.preventDefault()" class="mr-3">Cancel</button>
+            <button kendoButton [disabled]="!model.valid" [primary]="true">Next Step</button>
+        </div>
+    </div>
+</form>
