@@ -61,4 +61,16 @@ export class UserService {
       {id: 2, title: 'UAE'}
     ];
   }
+
+  getSexById(id: number): string {
+    return this.getSex().find(x => x.id === id).title;
+  }
+
+  getInitialsById(id: number): string {
+    return this.getInitials().find(x => x.id === id).title;
+  }
+
+  getCountryById(id: number): string {
+    return this.getCountries().find(x => x.id === id).title;
+  }
 }

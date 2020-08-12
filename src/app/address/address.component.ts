@@ -5,12 +5,10 @@ import { NotificationService } from '@progress/kendo-angular-notification';
 import { FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
-import { historyDateValidator } from '../validator/history-date.validator';
 import { letterOnlyValidator } from '../validator/letter-only.validator';
 import { numberOnlyValidator } from '../validator/number.validator';
 
 @Component({
-  selector: 'app-address',
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.css']
 })

@@ -1,1 +1,74 @@
-<p>review works!</p>
+<div class="flex mb-3 mt-3">
+    <div class="w-1/2 mx-auto text-3xl">
+        Review Details
+    </div>
+</div>
+<div class="flex mb-3">
+    <div class="w-1/2 mx-auto">
+        <table>
+            <tr>
+                <td>Sex</td>
+                <td>{{sex}}</td>
+            </tr>
+            <tr>
+                <td>Initials</td>
+                <td>{{initials}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{model.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{model.lastName}}</td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>{{model.dateOfBirth}}</td>
+            </tr>
+            <tr>
+                <td>Nationality</td>
+                <td>{{nationality}}</td>
+            </tr>
+            <tr>
+                <td>Social Security Number</td>
+                <td>{{model.socialSecurityNumber}}</td>
+            </tr>
+            <tr>
+                <td>Address Line One</td>
+                <td>{{model.addressLineOne}}</td>
+            </tr>
+            <tr>
+                <td>Address Line Two</td>
+                <td>{{model.addressLineTwo}}</td>
+            </tr>
+            <tr>
+                <td>Postal Code</td>
+                <td>{{model.postalCode}}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{model.city}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{country}}</td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>{{model.phoneNumber}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{model.email}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="flex mb-3">
+    <div class="w-1/2 mx-auto">
+        <button kendoButton (click)="$event.preventDefault()" class="mr-3 w-1/4">Cancel</button>
+        <button kendoButton [primary]="true" (click)="$event.preventDefault(); confirm()" class="w-2/3">Confirm</button>
+    </div>
+</div>

@@ -9,7 +9,6 @@ import { historyDateValidator } from '../validator/history-date.validator';
 import { letterOnlyValidator } from '../validator/letter-only.validator';
 
 @Component({
-  selector: 'app-basic',
   templateUrl: './basic.component.html',
   styleUrls: ['./basic.component.css']
 })
