@@ -1,1 +1,43 @@
-<p>address works!</p>
+<form [formGroup]="model" (ngSubmit)="onSubmit()">
+    <div class="flex mb-3 mt-3">
+        <div class="w-1/2 mx-auto text-3xl">
+            Address Details
+        </div>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="Address Line One" formControlName="addressLineOne" class="w-1/2 mx-auto" />
+        <app-error [control]="addressLineOne" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="Address Line Two" formControlName="addressLineTwo" class="w-1/2 mx-auto" />
+        <app-error [control]="addressLineTwo" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-maskedtextbox placeholder="Postal Code" mask="00000-00000" class="w-1/2 mx-auto" 
+        formControlName="postalCode"></kendo-maskedtextbox>
+        <app-error [control]="postalCode" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="City" formControlName="city" class="w-1/2 mx-auto" />
+        <app-error [control]="city" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <kendo-combobox placeholder="Country" [data]="countryList" [valuePrimitive]="true" class="w-1/2 mx-auto"
+        formControlName="country" textField="title" valueField="id"></kendo-combobox>
+        <app-error [control]="country" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox placeholder="Phone Number" formControlName="phoneNumber" class="w-1/2 mx-auto" />
+        <app-error [control]="phoneNumber" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <input kendoTextBox type="email" placeholder="Email" formControlName="email" class="w-1/2 mx-auto" />
+        <app-error [control]="email" class="w-1/2 mx-auto"></app-error>
+    </div>
+    <div class="flex mb-3">
+        <div class="w-1/2 mx-auto">
+            <button kendoButton (click)="$event.preventDefault()" class="mr-3 w-1/4">Cancel</button>
+            <button kendoButton [disabled]="!model.valid" [primary]="true" class="w-2/3">Next Step</button>
+        </div>
+    </div>
+</form>

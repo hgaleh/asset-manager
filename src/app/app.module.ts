@@ -9,7 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComboBoxModule } from '@progress/kendo-angular-dropdowns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- import { NumericTextBoxModule } from '@progress/kendo-angular-inputs';
+ import { NumericTextBoxModule, MaskedTextBoxModule } from '@progress/kendo-angular-inputs';
  import { TextBoxModule } from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
@@ -42,6 +42,7 @@ import { ErrorComponent } from './error/error.component';
     ButtonModule,
     NotificationModule,
     DrawerModule,
+    MaskedTextBoxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

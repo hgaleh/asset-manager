@@ -6,7 +6,7 @@ import { FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { historyDateValidator } from '../validator/history-date.validator';
-import { letterValidator } from '../validator/letter.validator';
+import { letterOnlyValidator } from '../validator/letter-only.validator';
 
 @Component({
   selector: 'app-basic',
@@ -27,8 +27,8 @@ export class BasicComponent implements OnInit {
     this.model = this.fb.group({
       sex: ['', Validators.required],
       initials: [''],
-      firstName: ['', [Validators.required, letterValidator()]],
-      lastName: ['', [Validators.required, letterValidator()]],
+      firstName: ['', [Validators.required, letterOnlyValidator()]],
+      lastName: ['', [Validators.required, letterOnlyValidator()]],
       dateOfBirth: ['', [Validators.required, historyDateValidator(new Date())]],
       nationality: ['', Validators.required],
       socialSecurityNumber: ['', [Validators.required, Validators.max(9999999999), Validators.min(999)]]

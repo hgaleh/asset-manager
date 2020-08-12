@@ -1,10 +1,9 @@
 import { ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms'
 
-export function letterValidator(): ValidatorFn {
+export function letterOnlyValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         const letterOnly: RegExp = /^[a-zA-Z ]+$/;
         const valid = letterOnly.test(control.value);
-        console.log(valid)
-        return valid ? null : { letter: {value: control.value} };
+        return valid ? null : { letterOnly: {value: control.value} };
     }
 }

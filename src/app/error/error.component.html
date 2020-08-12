@@ -2,6 +2,9 @@
     <div *ngIf="control.errors.required">
         Required.
     </div>
+    <div *ngIf="control.errors.email">
+        Invalid email.
+    </div>
     <div *ngIf="control.errors.maxlength">
         Too long.
     </div>
@@ -17,7 +20,10 @@
     <div *ngIf="control.errors.historyDate">
         Date should be from past.
     </div>
-    <div *ngIf="control.errors.letter">
+    <div *ngIf="control.errors.letterOnly">
         Only English characters.
+    </div>
+    <div *ngIf="control.errors.numberOnly">
+        Only numbers.
     </div>
 </span>

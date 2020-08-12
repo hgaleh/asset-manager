@@ -37,9 +37,9 @@
         <app-error [control]="socialSecurityNumber" class="w-1/2 mx-auto"></app-error>
     </div>
     <div class="flex mb-3">
-        <div class="mx-auto">
-            <button kendoButton (click)="$event.preventDefault()" class="mr-3">Cancel</button>
-            <button kendoButton [disabled]="!model.valid" [primary]="true">Next Step</button>
+        <div class="w-1/2 mx-auto">
+            <button kendoButton (click)="$event.preventDefault()" class="mr-3 w-1/4">Cancel</button>
+            <button kendoButton [disabled]="!model.valid" [primary]="true" class="w-2/3">Next Step</button>
         </div>
     </div>
 </form>
